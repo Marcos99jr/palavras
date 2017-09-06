@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<script src="./js/jquery.min.js"></script>
+	<script>
+	$(function(){
+			var tamanho = 140; 
+			var numeros = 0;
+			$("body")
+				.append($("<h3 />")
+				.text(tamanho)
+				.addClass("qtde")
+				
+				)
+				.append($("<h3 />")
+				.text(numeros)
+				.addClass("palavras")
+				)
+			$("#text").keyup(function(){
+				
+				var qtd_texto= $("#text").val().length;
+				var texto = $("#text").val();
+				
+				console.log(tamanho);
+				if(tamanho - qtd_texto>=0){
+				$(".qtde").text(tamanho - qtd_texto);	
+				$(".qtde").css("color","black");
+				}else{
+					$(".qtde").text(tamanho - qtd_texto);
+					$(".qtde").css("color","red");
+				}
+				
+				var palavraArray=texto.split(" ");
+				var numeros=palavraArray.length;
+				$(".palavras").text(numeros);
+					
+			
+			})
+						
+		
+		});
+		
+	</script>
+	
+		
+</head>
+<body>
+<textarea id="text"></textarea>
+
+</body>
+</html>
